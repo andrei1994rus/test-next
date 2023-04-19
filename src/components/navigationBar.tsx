@@ -5,18 +5,16 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
-import {useEffect,useMemo,useState} from 'react';
+import {useEffect} from 'react';
 import dynamic from 'next/dynamic';
 
 const Menu=dynamic(()=>import('./menu'));
 
-let isBindedMenuButton:boolean=false;
-
 export default function NavigationBar()
 {
-  const [showMenu,setShowMenu]=useState(false);
   useEffect(()=>
   {
+    /*<MenuIcon/>*/
     const menuButton=document.querySelector('[data-testid~="MenuIcon"]')!
     bindMenu(menuButton);
   },[]);
@@ -25,23 +23,10 @@ export default function NavigationBar()
   {
     menuButton.addEventListener('click',function(e)
     {
-      setShowMenu(!showMenu);
+      let menu:any=document.querySelector('[data-type~=menu]');
+      menu.classList.toggle('hiden');
     });
-    isBindedMenuButton=true;
   };
-
-  const memoShowMenu=useMemo(()=>
-  {
-    if(isBindedMenuButton)
-    {
-      isBindedMenuButton=showMenu;
-      const menuButton=document.querySelector('[data-testid~="MenuIcon"]')!
-      bindMenu(menuButton);
-      return showMenu;
-    }
-    
-    return false;
-  },[showMenu]);
 
   return (
     <Box sx={{flexGrow:1}}>
@@ -61,7 +46,9 @@ export default function NavigationBar()
           </Typography>
         </Toolbar>
       </AppBar>
-      {(memoShowMenu) ? <Menu/> : <></>}
+      <div data-type='menu' className='hiden'>
+        <Menu/>
+      </div>
     </Box>
   );
 };
