@@ -23,5 +23,5 @@ export default function handler(req:NextApiRequest,res:NextApiResponse)
 {
   const names=getNames();
   
-  setTimeout(()=>names.then((result:any)=>res.status(200).json(result),500));
+  setTimeout(()=>names.then((result:any)=>res.status(200).json(result)),500);
 }
