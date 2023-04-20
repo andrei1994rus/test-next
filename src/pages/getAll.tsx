@@ -1,15 +1,19 @@
 import axios from 'axios';
 import Head from 'next/head'
 import useSWR from 'swr';
+import dynamic from 'next/dynamic';
 
 import styles from '@/styles/GetAll.module.css';
+import Error from '@/components/error';
 
-const fetcher=(url:string)=>axios(url).then((res)=>res.data);
+const Loading=dynamic(()=>import('@/components/loading'));
+
+const fetcher=(url:string)=>axios(url).then(res=>res.data);
 
 export async function getServerSideProps()
 {
   const API=process.env.NEXT_DOMAIN_GET_ALL!
-  console.log(API);
+  
   return {
     props: 
     {
@@ -20,9 +24,17 @@ export async function getServerSideProps()
 
 export default function GetAll({API}:any)
 {
-  console.log(API);
-  const {data,error}=useSWR(API,fetcher);
+  const {data,error,isLoading}=useSWR(API,fetcher,
+  {
+    revalidateOnFocus: false,
+    refreshWhenOffline: true
+  });
   
+  if(error)
+  {
+    console.log('error:',error);
+  }
+
   return (
     <>
       <Head>
@@ -34,9 +46,9 @@ export default function GetAll({API}:any)
       
       <main className={styles.main}>
         <h1>Names</h1>
-        {(!data) && <span>Loading...</span>}
-        {(error) && <span>An error has occurred.</span>}
-        {data?.list.map((item:any,index:number)=><li key={index}>{item.name}</li>)}
+        {(isLoading) && <Loading />}
+        {(error) && <Error errorMessage={error.message} errorCode={error.code}/>}
+        {data?.list?.map((item:any,index:number)=><li key={index}>{item.name}</li>)}
       </main>
     </>
   )
