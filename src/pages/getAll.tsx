@@ -5,6 +5,8 @@ import dynamic from 'next/dynamic';
 
 import styles from '@/styles/GetAll.module.css';
 import Error from '@/components/error';
+import IServerSideProps from '@/interfaces/IServerSideProps';
+import IName from '@/interfaces/IName';
 
 const Loading=dynamic(()=>import('@/components/loading'));
 
@@ -22,7 +24,7 @@ export async function getServerSideProps()
   };
 }
 
-export default function GetAll({API}:any)
+export default function GetAll({API}:IServerSideProps)
 {
   const {data,error,isLoading}=useSWR(API,fetcher,
   {
@@ -48,7 +50,7 @@ export default function GetAll({API}:any)
         <h1>Names</h1>
         {(isLoading) && <Loading />}
         {(error) && <Error errorMessage={error.message} errorCode={error.code}/>}
-        {data?.list?.map((item:any,index:number)=><li key={index}>{item.name}</li>)}
+        {data?.list?.map((item:IName,index:number)=><li key={index}>{item.name}</li>)}
       </main>
     </>
   )

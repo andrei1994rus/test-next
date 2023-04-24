@@ -1,4 +1,5 @@
 import IError from "@/interfaces/IError";
+import {errorData} from "@/types/types";
 import {PureComponent} from "react";
 
 export default class extends PureComponent<IError>
@@ -8,11 +9,22 @@ export default class extends PureComponent<IError>
         super(props);
     }
 
+    outputError=(error:errorData)=>
+    {
+        const [message,code]=error;
+        
+        return (
+            <span>{message} <span>({code})</span></span>
+        );
+    };
+
     render()
     {
+        const {errorMessage,errorCode}=this.props;
+        
         return (
         <>
-            <span>{this.props.errorMessage} <span>({this.props.errorCode})</span></span>
+            {this.outputError([errorMessage,errorCode])}
         </>
         );
     }
