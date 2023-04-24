@@ -7,6 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import {useEffect} from 'react';
 import dynamic from 'next/dynamic';
+import hideMenuAfterClick from '@/handleClick/hideMenuAfterClick';
 
 const Menu=dynamic(()=>import('./menu'));
 
@@ -42,7 +43,7 @@ export default function NavigationBar()
             <MenuIcon />
           </IconButton>
           <Typography variant="h4" component="div" sx={{flexGrow:1}}>
-            <Link href={'/'}>Test Next App</Link>
+            <Link href={'/'} onClick={hideMenuAfterClick}>Test Next App</Link>
           </Typography>
         </Toolbar>
       </AppBar>

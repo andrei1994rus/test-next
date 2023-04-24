@@ -6,6 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import {navData} from "@/data/navData";
 import {navigationData} from "@/types/types";
+import hideMenuAfterClick from "@/handleClick/hideMenuAfterClick";
 
 const mapItems=(navData:navigationData)=>
 {
@@ -20,7 +21,7 @@ const getItem=(item:IUrl)=>
   const {name,path}=item;
     
     return (
-        <strong>
+        <strong onClick={hideMenuAfterClick}>
           <Link href={path}>{name}</Link>
         </strong>
     );
