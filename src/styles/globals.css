@@ -164,3 +164,22 @@ a
 	}
 }
 /* ________________________ */
+
+.main__input-label[data-shrink~=true]
+{
+	transform: translate(0,-1.2vh) scale(0.75);
+	font-size: calc(1rem*1.2);
+}
+
+.main__input-label[data-shrink~=false]
+{
+	transform: translate(0,1vh) scale(1);
+	font-size: calc(1rem*1.2);
+}
+
+button[data-type~='modal-click']
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
