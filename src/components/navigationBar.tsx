@@ -43,7 +43,7 @@ export default function NavigationBar()
             <MenuIcon />
           </IconButton>
           <Typography variant="h4" component="div" sx={{flexGrow:1}}>
-            <Link href={'/'} onClick={hideMenuAfterClick}>Test Next App</Link>
+            <Link data-type='header-link' href={'/'} onClick={hideMenuAfterClick}>Test Next App</Link>
           </Typography>
         </Toolbar>
       </AppBar>

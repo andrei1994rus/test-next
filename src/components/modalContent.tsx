@@ -32,7 +32,7 @@ export default function modalContent({error,data,index}:IModalContentProps)
         <>
             {error && (
                 <>
-                    <Typography id="modal-modal-title" variant="h6">
+                    <Typography id="modal-modal-title" variant="h4">
                         Error!
                     </Typography>
                     {getErrorContent(error)}
@@ -40,7 +40,7 @@ export default function modalContent({error,data,index}:IModalContentProps)
             )}
             {data && (
                 <>
-                    <Typography id="modal-modal-title" variant="h6">
+                    <Typography id="modal-modal-title" variant="h4">
                         Info
                     </Typography>
                     {getContent(data,index)}

@@ -14,7 +14,7 @@ export default class extends PureComponent<IError>
         const [message,code]=error;
         
         return (
-            <span>{message} <span>({code})</span></span>
+            <span>{message} ({code})</span>
         );
     };
 

@@ -22,6 +22,14 @@ export async function getServerSideProps()
   };
 }
 
+const style=
+{
+  display: 'flex', 
+  justifyContent: 'center', 
+  paddingTop: '2vh', 
+  paddingLeft: '2vw', 
+  paddingRight: '2vw'
+};
 
 export default function GetOne({API}:IServerSideProps)
 {
@@ -74,12 +82,12 @@ export default function GetOne({API}:IServerSideProps)
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <main style={{display: 'flex', justifyContent: 'center', paddingTop: '2vh', paddingLeft:'2vh'}}>
-        <FormControl>
-          <InputLabel className='main__input-label' htmlFor='input'>Index</InputLabel>
-          <Input id='input' inputRef={input} aria-describedby='helper-text'/>
+      <main style={style}>
+        <FormControl className='main__form'>
+          <InputLabel className='main__input-label' htmlFor='form-input'>Index</InputLabel>
+          <Input id='form-input' inputRef={input} aria-describedby='helper-text'/>
           <FormHelperText id='helper-text' style={{marginLeft: 0, marginRight: 0}}>{helperText}</FormHelperText>
-          <Button onClick={request} style={{paddingTop: '1vh'}}color='success' variant='contained'>Get name</Button>
+          <Button onClick={request} data-type='btn-get-one' color='success' variant='contained'>Get name</Button>
           {memoShowModal && <MyModal url={API} value={value} reset={reset}/>}
           {warning.current && <span>{warning.current}</span>}
         </FormControl>

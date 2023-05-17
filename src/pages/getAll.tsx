@@ -47,10 +47,12 @@ export default function GetAll({API}:IServerSideProps)
       </Head>
       
       <main className={styles.main}>
-        <h1>Names</h1>
+        <h1 className={styles.main__title}>Names</h1>
         {(isLoading) && <Loading />}
         {(error) && <Error errorMessage={error.message} errorCode={error.code}/>}
-        {data?.list?.map((item:IName,index:number)=><li key={index}>{item.name}</li>)}
+        <ul className={styles.main__list}>
+          {data?.list?.map((item:IName,index:number)=><li key={index}>{item.name}</li>)}
+        </ul>
       </main>
     </>
   )

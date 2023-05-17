@@ -12,13 +12,13 @@ const fetcher=(url:string)=>axios(url).then(res=>res.data);
 
 const style=
 {
-    position: 'absolute' as 'absolute',
+    position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: '85vw',
     bgcolor: 'background.paper',
-    border: '2px solid #000',
+    border: '.9vh solid #000',
     boxShadow: 24,
     p: 4,
 };
@@ -64,7 +64,7 @@ export default function MyModal({url,value,reset}:IModalProps)
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 >
-                    <Box sx={style}>
+                    <Box data-type='modal-box' sx={style}>
                         <Button data-type='modal-click' onClick={handleClose}>&times;</Button>
                         <ModalContent error={error} data={data} index={index}/>
                     </Box>
