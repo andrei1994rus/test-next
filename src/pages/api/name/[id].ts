@@ -26,7 +26,7 @@ export default function handler(req:NextApiRequest,res:NextApiResponse)
   if(/\D/.test(id))
   {
     console.log('not number!');
-    res.status(400).send('BAD REQUEST!');
+    return res.status(400).send('BAD REQUEST!');
   }
 
   const name=getName(id);
@@ -35,7 +35,8 @@ export default function handler(req:NextApiRequest,res:NextApiResponse)
   {
     if(result.name=='null')
     {
-      res.status(404).send('404 NOT FOUND!');
+      console.log('not found!');
+      return res.status(404).send('404 NOT FOUND!');
     }
 
     res.status(200).json(result);
