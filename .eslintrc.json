@@ -1,0 +1,23 @@
+{
+  "extends": 
+  [
+    "next", 
+    "plugin:@next/next/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins":
+  [
+    "react", 
+    "prettier"
+],
+  "rules":
+  {
+    "prettier/prettier": 
+    [
+      "warn",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}
