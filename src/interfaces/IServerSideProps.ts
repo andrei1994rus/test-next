@@ -1,4 +1,3 @@
-export default interface IServerSideProps
-{
-    API: string
+export default interface IServerSideProps {
+	API: string;
 }

@@ -1,5 +1,4 @@
-export default interface IUrl
-{
-  name: string,
-  path: string,
-};
+export default interface IUrl {
+	name: string;
+	path: string;
+}

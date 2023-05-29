@@ -1,11 +1,9 @@
-import {Component} from "react";
+import {Component} from 'react';
 
-export default class Loading extends Component
-{
-	render=()=>
-	(
+export default class Loading extends Component {
+	render = () => (
 		<>
-			<div className="lds-spinner">
+			<div className='lds-spinner'>
 				<div></div>
 				<div></div>
 				<div></div>
@@ -20,5 +18,5 @@ export default class Loading extends Component
 				<div></div>
 			</div>
 		</>
-	)
+	);
 }

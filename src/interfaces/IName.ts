@@ -1,4 +1,3 @@
-export default interface IName
-{
-    name: string
+export default interface IName {
+	name: string;
 }
