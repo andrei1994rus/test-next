@@ -24,3 +24,6 @@ It's test Next app.
 - Libraries: Material-UI, Axios, SWR, Autoprefixer, ESLint, Prettier;
 - Method: Desktop First;
 - [Api](https://github.com/andrei1994rus/test-redis).
+
+---
+[URL](https://test-next-andrei1994rus.vercel.app/).
