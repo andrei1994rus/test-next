@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import Link from 'next/link';
+import hideMenuAfterClick from '@/handleClick/hideMenuAfterClick';
 
 export default function Home() {
 	return (
@@ -28,7 +29,8 @@ export default function Home() {
 						output list all names (
 						<Link
 							className={styles.main__link}
-							href='/getAll'>
+							href='/getAll'
+							onClick={hideMenuAfterClick}>
 							/getAll
 						</Link>
 						);
@@ -37,7 +39,8 @@ export default function Home() {
 						output name by index (
 						<Link
 							className={styles.main__link}
-							href='/getOne'>
+							href='/getOne'
+							onClick={hideMenuAfterClick}>
 							/getOne
 						</Link>
 						).
