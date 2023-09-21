@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  padding-left: 2vw;
+  padding-left: 3vw;
   padding-top: 2vh;
 }
 
@@ -17,11 +17,11 @@
 /* Tablet */
 @media(700px<width<1024px) {
   .main {
-    padding-left: 4vw;
+    padding-left: 4.5vw;
   }
 
   .main__list {
-    padding-left: 3vw;
+    padding-left: 4.5vw;
   }
 }
 
@@ -33,7 +33,7 @@
   }
 
   .main__list {
-    padding-left: 4vw;
+    padding-left: 5vw;
   }
 }
 
