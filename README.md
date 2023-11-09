@@ -1,9 +1,14 @@
 # test-next
+
 ---
+
 It's test Next app.
 
 ---
+
 # Functions
+
+- Has router pages;
 - Has navigation bar;
 - Has types and interfaces;
 - Use .env;
@@ -15,10 +20,11 @@ It's test Next app.
 - Adaptive.
 
 ---
+
 # Used stack technology
 
-- React;
-- Next;
+- ReactJS;
+- NextJS;
 - Typescript;
 - CSS;
 - Libraries: Material-UI, Axios, SWR, Autoprefixer, ESLint, Prettier;
@@ -26,4 +32,5 @@ It's test Next app.
 - [Api](https://github.com/andrei1994rus/test-redis).
 
 ---
+
 [URL](https://test-next-andrei1994rus.vercel.app/).
