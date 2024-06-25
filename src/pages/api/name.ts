@@ -5,7 +5,7 @@ const getNames: any = async () => {
 	let names;
 
 	try {
-		names = await fetch('https://test-redis.cyclic.app/person/lrange/all');
+		names = await fetch('https://test-api-redis.netlify.app/.netlify/functions/api/person');
 	} catch (e) {
 		console.log(e);
 		return e;

@@ -4,7 +4,7 @@ const getName: any = async (id: number) => {
 	let name;
 
 	try {
-		name = await fetch(`https://test-redis.cyclic.app/person/lindex/${id}`);
+		name = await fetch(`https://test-api-redis.netlify.app/.netlify/functions/api/person/${id}`);
 	} catch (e) {
 		console.log(e);
 		return e;
